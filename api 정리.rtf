@@ -1,0 +1,428 @@
+{\rtf1\ansi\ansicpg949\cocoartf2818
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset129 AppleSDGothicNeo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww6800\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \'97GPU SERVER API\
+\
+- api:\
+/request		[POST]\
+- body:\
+\{\
+	\'93request\'94: \'93
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 \'94\
+\}\
+- response:\
+\{\
+	\'93request\'94: \'93
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 \'94,\
+	\'93response\'94: \'93
+\f1 \'b3\'d7
+\f0  
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 \'94\
+\}\
+\
+\
+- api:\
+/response		[GET]\
+- response:\
+\{\
+	\'93response\'94: \'93
+\f1 \'b3\'d7
+\f0  
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 \'94\
+\}\
+\
+\
+- api:\
+/log			[GET]\
+- response:\
+[\
+	\{\
+		\'93request\'94: \'93
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 \'94,\
+		\'93response\'94: \'93
+\f1 \'b3\'d7
+\f0  
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 \'94\
+	\}\
+]\
+\
+\
+\
+\
+\
+- api:\
+/light/bedroom	[GET]\
+- response:\
+\{\
+	\'93light\'94: \{\
+		\'93red\'94: 0,\
+		\'93green\'94: 0,\
+		\'93blue\'94: 0,\
+		\'93isLightOn\'94: False\
+	\}\
+\}\
+\
+\
+- api:\
+/light/living_room	[GET]\
+- response:\
+\{\
+	\'93light\'94: \{\
+		\'93red\'94: 0,\
+		\'93green\'94: 0,\
+		\'93blue\'94: 0,\
+		\'93isLightOn\'94: False\
+	\}\
+\}\
+\
+\
+- api:\
+/light/kitchen		[GET]\
+- response:\
+\{\
+	\'93light\'94: \{\
+		\'93red\'94: 0,\
+		\'93green\'94: 0,\
+		\'93blue\'94: 0,\
+		\'93isLightOn\'94: False\
+	\}\
+\}\
+\
+\
+- api:\
+/temperature		[GET]\
+- response:\
+\{\
+	\'93temperature\'94: 20.000000\
+\}\
+\
+\
+- api:\
+/humidity		[GET]\
+- response:\
+\{\
+	\'93humidity\'94: 20.000000\
+\}\
+\
+\
+\'97 <red>, <green>, <blue>: 0~255\
+\'97 <power>: True, False\
+\'97 
+\f1 \'ba\'b8\'b4\'d9
+\f0  
+\f1 \'ba\'b8\'b4\'cf\'b1\'ee
+\f0  
+\f1 \'c0\'cc
+\f0  
+\f1 \'ba\'ce\'ba\'d0\'b5\'b5
+\f0  body
+\f1 \'bf\'a1
+\f0  json 
+\f1 \'b3\'d6\'b0\'d4
+\f0  
+\f1 \'c7\'cf\'c1\'f6
+\f0  
+\f1 \'be\'b5\'b4\'eb\'be\'f8\'c0\'cc
+\f0  url
+\f1 \'bf\'a1
+\f0  
+\f1 \'b3\'d6\'be\'ee\'bc\'ad
+\f0  
+\f1 \'b6\'f3\'c1\'ee\'ba\'a3\'b8\'ae\'c6\'c4\'c0\'cc\'b5\'b5
+\f0  
+\f1 \'c1\'f6\'b1\'dd
+\f0  url
+\f1 \'bf\'a1
+\f0  
+\f1 \'c6\'c4\'b6\'f3\'b9\'cc\'c5\'cd\'b7\'ce
+\f0  
+\f1 \'b5\'e9\'be\'ee\'b0\'a3
+\f0  
+\f1 \'bb\'f3\'c5\'c4\'b5\'a5
+\f0  json
+\f1 \'c0\'b8\'b7\'ce
+\f0  body
+\f1 \'bf\'a1
+\f0  
+\f1 \'b3\'d6\'be\'ee\'bc\'ad
+\f0  
+\f1 \'ba\'b8\'b3\'bb\'b4\'c2\'b0\'d4
+\f0  
+\f1 \'c6\'ed\'c7\'d2\'b0\'cd\'b0\'b0\'c0\'b8\'b8\'e9
+\f0  
+\f1 \'b1\'d7\'b7\'b8\'b0\'d4
+\f0  
+\f1 \'bc\'f6\'c1\'a4\'c7\'d2\'b0\'d4\'bf\'e4
+\f0 . 
+\f1 \'b0\'a3\'b4\'dc\'c7\'d8\'bc\'ad
+\f0  
+\f1 \'b1\'dd\'b9\'e6
+\f0  
+\f1 \'b3\'a1\'b3\'aa\'bf\'e4
+\f0 .\
+- api:\
+/light/bedroom/change/<red>/<green>/<blue>	[POST]\
+- response:\
+\{\
+	\'93bedroom\'94: \{\
+		\'93red\'94: 70,\
+		\'93green\'94: 70,\
+		\'93blue\'94: 70,\
+		\'93isLightOn\'94: False\
+	\}\
+\}\
+\
+\
+- api:\
+/light/living_room/change/<red>/<green>/<blue>	[POST]\
+- response:\
+\{\
+	\'93living_room\'94: \{\
+		\'93red\'94: 70,\
+		\'93green\'94: 70,\
+		\'93blue\'94: 70,\
+		\'93isLightOn\'94: False\
+	\}\
+\}\
+\
+\
+- api:\
+/light/kitchen/change/<red>/<green>/<blue>	[POST]\
+- response:\
+\{\
+	\'93kitchen\'94: \{\
+		\'93red\'94: 70,\
+		\'93green\'94: 70,\
+		\'93blue\'94: 70,\
+		\'93isLightOn\'94: False\
+	\}\
+\}\
+\
+\
+- api:\
+/light/bedroom/change/power/<power>		[POST]\
+- response:\
+\{\
+	\'93bedroom\'94: \{\
+		\'93red\'94: 70,\
+		\'93green\'94: 70,\
+		\'93blue\'94: 70,\
+		\'93isLightOn\'94: True\
+	\}\
+\}\
+\
+\
+- api:\
+/light/living_room/change/power/<power>		[POST]\
+- response:\
+\{\
+	\'93living_room\'94: \{\
+		\'93red\'94: 70,\
+		\'93green\'94: 70,\
+		\'93blue\'94: 70,\
+		\'93isLightOn\'94: True\
+	\}\
+\}\
+\
+\
+- api:\
+/light/kitchen/change/power/<power>		[POST]\
+- response:\
+\{\
+	\'93kitchen\'94: \{\
+		\'93red\'94: 70,\
+		\'93green\'94: 70,\
+		\'93blue\'94: 70,\
+		\'93isLightOn\'94: True\
+	\}\
+\}\
+\
+\
+\
+\
+\'97 
+\f1 \'bf\'a9\'b1\'e2\'bc\'ad\'ba\'ce\'c5\'cd
+\f0  
+\f1 \'b9\'ab\'bd\'bc
+\f0  
+\f1 \'bb\'fd\'b0\'a2\'c0\'b8\'b7\'ce
+\f0  \'93changed temperature\'94 
+\f1 \'c0\'cc\'b7\'b1\'bd\'c4\'c0\'b8\'b7\'ce
+\f0  
+\f1 \'c0\'db\'bc\'ba\'c7\'df\'b4\'c2\'c1\'f6
+\f0  
+\f1 \'b8\'f0\'b8\'a3\'b0\'da\'b4\'c2\'b5\'a5 \'b8\'f1\'bf\'e4\'c0\'cf\'bf\'a1
+\f0  
+\f1 \'b0\'c7\'c8\'f1\'b4\'d4\'b2\'b2
+\f0  \'93temperature\'94, \'93humidity\'94
+\f1 \'b7\'ce
+\f0  
+\f1 \'c5\'eb\'c0\'cf\'c7\'d8\'b4\'de\'b6\'f3
+\f0  
+\f1 \'c0\'fc\'b4\'de\'c7\'d2\'b0\'d4\'bf\'e4
+\f0 .\
+- api:\
+/temperature/change/<value>	[POST]\
+- response:\
+\{\
+	\'93changed temperature\'94: 30\
+\}\
+\
+\
+- api:\
+/temperature/add/<value>	[POST]\
+- response:\
+\{\
+	\'93added temperature\'94: 32\
+\}\
+\
+\
+- api:\
+/temperature/sub/<value>	[POST]\
+- response:\
+\{\
+	\'93subtracted temperature\'94: 28\
+\}\
+\
+\
+\
+\
+\
+- api:\
+/humidity/change/<value>		[POST]\
+- response:\
+\{\
+	\'93changed humidity\'94: 30\
+\}\
+\
+\
+- api:\
+/humidity/add/<value>		[POST]\
+- response:\
+\{\
+	\'93added humidity\'94: 30\
+\}\
+\
+\
+- api:\
+/humidity/sub/<value>		[POST]\
+- response:\
+\{\
+	\'93subtracted humidity\'94: 30\
+\}\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\'97RASPBERRY-PI\
+- api:\
+/led/kitchen		[GET]\
+- response:\
+\{\
+	\'93red\'94: 0\
+	\'93green\'94: 0\
+	\'93blue\'94: 0\
+	\'93isLedOn\'94: 0\
+\}\
+\
+\
+- api:\
+/led/living_room	[GET]\
+- response:\
+\{\
+	\'93red\'94: 0\
+	\'93green\'94: 0\
+	\'93blue\'94: 0\
+	\'93isLedOn\'94: 0\
+\}\
+\
+\
+- api:\
+/led/bedroom		[GET]\
+- response:\
+\{\
+	\'93red\'94: 0\
+	\'93green\'94: 0\
+	\'93blue\'94: 0\
+	\'93isLedOn\'94: 0\
+\}\
+\
+\
+\'97 \uc0\u49468 \u49436  \u50728 \u49845 \u46020 \
+- api:\
+/temperature	[GET]\
+- response:\
+\{\
+	\'93temperature\'94: 20.0\
+\}\
+\
+\
+- api:\
+/humidity	[GET]\
+- response:\
+\{\
+	\'93humidity\'94: 20.0\
+\}\
+\
+\
+\'97 \uc0\u47785 \u54364  \u50728 \u49845 \u46020  (post\u47196  \u48320 \u44221 \u54616 \u45716  \u45936 \u51060 \u53552 )\
+- api:\
+/temperature/object	[GET]\
+- response:\
+\{\
+	\'93temperature\'94: 20.0\
+\}\
+\
+\
+- api:\
+/humidity/object	[GET]\
+- response:\
+\{\
+	\'93humidity\'94: 20.0\
+\}\
+\
+\
+\'97 position: kitchen, living_room, bedroom\
+\'97 red, green, blue: 0~255\
+\'97 isLedOn: True, False\
+- api:\
+/led/<position>/<red>/<green>/<blue>/<isLedOn>\
+- response:\
+\{\
+	\'93red\'94: 0\
+	\'93green\'94: 0\
+	\'93blue\'94: 0\
+	\'93isLedOn\'94: 0\
+\}\
+\
+\
+- api:\
+/temperature	[POST]\
+- response:\
+\{\
+	\'93temperature\'94: 20.0\
+\}\
+\
+\
+- api:\
+/humidity	[POST]\
+- response:\
+\{\
+	\'93humidity\'94: 20.0\
+\}}
