@@ -1,0 +1,331 @@
+—GPU SERVER API
+
+- api:
+/request		[POST]
+- body:
+{
+	“request”: “안녕하세요”
+}
+- response:
+{
+	“request”: “안녕하세요”,
+	“response”: “네 안녕하세요”
+}
+
+
+- api:
+/response		[GET]
+- response:
+{
+	“response”: “네 안녕하세요”
+}
+
+
+- api:
+/log			[GET]
+- response:
+[
+	{
+		“request”: “안녕하세요”,
+		“response”: “네 안녕하세요”
+	}
+]
+
+
+
+
+
+- api:
+/light/bedroom	[GET]
+- response:
+{
+	“light”: {
+		“red”: 0,
+		“green”: 0,
+		“blue”: 0,
+		“isLightOn”: False
+	}
+}
+
+
+- api:
+/light/living_room	[GET]
+- response:
+{
+	“light”: {
+		“red”: 0,
+		“green”: 0,
+		“blue”: 0,
+		“isLightOn”: False
+	}
+}
+
+
+- api:
+/light/kitchen		[GET]
+- response:
+{
+	“light”: {
+		“red”: 0,
+		“green”: 0,
+		“blue”: 0,
+		“isLightOn”: False
+	}
+}
+
+
+- api:
+/temperature		[GET]
+- response:
+{
+	“temperature”: 20.000000
+}
+
+
+- api:
+/humidity		[GET]
+- response:
+{
+	“humidity”: 20.000000
+}
+
+
+— <red>, <green>, <blue>: 0~255
+— <power>: True, False
+— 보다 보니까 이 부분도 body에 json 넣게 하지 쓸대없이 url에 넣어서 라즈베리파이도 지금 url에 파라미터로 들어간 상탠데 json으로 body에 넣어서 보내는게 편할것같으면 그렇게 수정할게요. 간단해서 금방 끝나요.
+- api:
+/light/bedroom/change/<red>/<green>/<blue>	[POST]
+- response:
+{
+	“bedroom”: {
+		“red”: 70,
+		“green”: 70,
+		“blue”: 70,
+		“isLightOn”: False
+	}
+}
+
+
+- api:
+/light/living_room/change/<red>/<green>/<blue>	[POST]
+- response:
+{
+	“living_room”: {
+		“red”: 70,
+		“green”: 70,
+		“blue”: 70,
+		“isLightOn”: False
+	}
+}
+
+
+- api:
+/light/kitchen/change/<red>/<green>/<blue>	[POST]
+- response:
+{
+	“kitchen”: {
+		“red”: 70,
+		“green”: 70,
+		“blue”: 70,
+		“isLightOn”: False
+	}
+}
+
+
+- api:
+/light/bedroom/change/power/<power>		[POST]
+- response:
+{
+	“bedroom”: {
+		“red”: 70,
+		“green”: 70,
+		“blue”: 70,
+		“isLightOn”: True
+	}
+}
+
+
+- api:
+/light/living_room/change/power/<power>		[POST]
+- response:
+{
+	“living_room”: {
+		“red”: 70,
+		“green”: 70,
+		“blue”: 70,
+		“isLightOn”: True
+	}
+}
+
+
+- api:
+/light/kitchen/change/power/<power>		[POST]
+- response:
+{
+	“kitchen”: {
+		“red”: 70,
+		“green”: 70,
+		“blue”: 70,
+		“isLightOn”: True
+	}
+}
+
+
+
+
+— 여기서부터 무슨 생각으로 “changed temperature” 이런식으로 작성했는지 모르겠는데 목요일에 건희님께 “temperature”, “humidity”로 통일해달라 전달할게요.
+- api:
+/temperature/change/<value>	[POST]
+- response:
+{
+	“changed temperature”: 30
+}
+
+
+- api:
+/temperature/add/<value>	[POST]
+- response:
+{
+	“added temperature”: 32
+}
+
+
+- api:
+/temperature/sub/<value>	[POST]
+- response:
+{
+	“subtracted temperature”: 28
+}
+
+
+
+
+
+- api:
+/humidity/change/<value>		[POST]
+- response:
+{
+	“changed humidity”: 30
+}
+
+
+- api:
+/humidity/add/<value>		[POST]
+- response:
+{
+	“added humidity”: 30
+}
+
+
+- api:
+/humidity/sub/<value>		[POST]
+- response:
+{
+	“subtracted humidity”: 30
+}
+
+
+
+
+
+
+
+
+
+
+—RASPBERRY-PI
+- api:
+/led/kitchen		[GET]
+- response:
+{
+	“red”: 0
+	“green”: 0
+	“blue”: 0
+	“isLedOn”: 0
+}
+
+
+- api:
+/led/living_room	[GET]
+- response:
+{
+	“red”: 0
+	“green”: 0
+	“blue”: 0
+	“isLedOn”: 0
+}
+
+
+- api:
+/led/bedroom		[GET]
+- response:
+{
+	“red”: 0
+	“green”: 0
+	“blue”: 0
+	“isLedOn”: 0
+}
+
+
+— 센서 온습도
+- api:
+/temperature	[GET]
+- response:
+{
+	“temperature”: 20.0
+}
+
+
+- api:
+/humidity	[GET]
+- response:
+{
+	“humidity”: 20.0
+}
+
+
+— 목표 온습도 (post로 변경하는 데이터)
+- api:
+/temperature/object	[GET]
+- response:
+{
+	“temperature”: 20.0
+}
+
+
+- api:
+/humidity/object	[GET]
+- response:
+{
+	“humidity”: 20.0
+}
+
+
+— position: kitchen, living_room, bedroom
+— red, green, blue: 0~255
+— isLedOn: True, False
+- api:
+/led/<position>/<red>/<green>/<blue>/<isLedOn>
+- response:
+{
+	“red”: 0
+	“green”: 0
+	“blue”: 0
+	“isLedOn”: 0
+}
+
+
+- api:
+/temperature	[POST]
+- response:
+{
+	“temperature”: 20.0
+}
+
+
+- api:
+/humidity	[POST]
+- response:
+{
+	“humidity”: 20.0
+}
