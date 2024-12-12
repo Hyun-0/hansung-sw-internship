@@ -52,7 +52,7 @@ rag_tool = QueryEngineTool.from_defaults(query_engine=query_engine, description=
 tools = Tools().get_tools()
 tools.append(rag_tool)
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "OPENAI_API_KEY"
 llm = OpenAI(api_key=os.environ["OPENAI_API_KEY"], model_name="gpt-4")
 
 agent = OpenAIAgent.from_tools(Tools().get_tools(), llm = llm, verbose=True)
