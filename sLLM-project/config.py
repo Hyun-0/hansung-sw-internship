@@ -1,0 +1,8 @@
+HUGGING_TOKEN = "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"
+BASE_MODEL = "ibm-granite/granite-3.0-8b-instruct"
+DATASET = "document/"
+FAST_EMBED_MODEL_NAME = "BAAI/bge-small-en-v1.5"
+SYSTEM_PROMPT = "you are good assistant, you must answer to korean."
+QUERY_WRAPPER_PROMPT = "<|user|>{query_str}<|ASSISTANT|>"
+ENCODER_MODEL = "cross-encoder/ms-marco-MiniLM-L-2-v2"
+PEFT_ADAPTER = "keonhee/1120-results"
