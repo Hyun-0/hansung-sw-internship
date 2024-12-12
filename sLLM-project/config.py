@@ -1,4 +1,4 @@
-HUGGING_TOKEN = "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"
+HUGGING_TOKEN = "HUGGING_TOKEN"
 BASE_MODEL = "ibm-granite/granite-3.0-8b-instruct"
 DATASET = "document/"
 FAST_EMBED_MODEL_NAME = "BAAI/bge-small-en-v1.5"
